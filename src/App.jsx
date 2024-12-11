@@ -1,6 +1,8 @@
-import FirstPage from "./components/FirstPage"
+import FirstPage from "./components/FirstPage";
+import AboutUs from "./components/AboutUs";
+import ContactMe from "./components/ContactMe";
 function App() {
-  return <FirstPage/>
+  return <ContactMe />;
 }
 
-export default App
+export default App;

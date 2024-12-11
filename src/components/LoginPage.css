@@ -1,0 +1,5 @@
+.gradient-custom{
+    background: linear-gradient(90deg, #327ef8, #f14e4e);
+    height: 100vh;
+    width: 100vw;
+}
