@@ -1,12 +1,15 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
+import { Link } from "react-router-dom";
 
 function FirstPage() {
   return (
     <div>
       <NavBar />
-      <Carousel />
-      <TypesPage />
+      <div className="container">
+        <Carousel />
+        <TypesPage />
+      </div>
     </div>
   );
 }
@@ -18,10 +21,10 @@ export function NavBar() {
         className="navbar navbar-expand-lg"
         style={{ backgroundColor: "#c4c4c4" }}
       >
-        <div className="container-fluid">
-          <a className="navbar-brand text-danger" href="#">
+        <div className="container-fluid text-decoration-none">
+          <Link className="navbar-brand text-danger" to={"/"}>
             Ferreteria <br /> Silverio
-          </a>
+          </Link>
           <button
             className="navbar-toggler"
             type="button"
@@ -36,19 +39,14 @@ export function NavBar() {
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
               <li className="nav-item">
-                <a className="nav-link active" aria-current="page" href="#">
+                <Link className="nav-link active" to={"/store"}>
                   Tienda
-                </a>
+                </Link>
               </li>
               <li className="nav-item">
-                <a className="nav-link active" aria-current="page" href="#">
-                  Ofertas
-                </a>
-              </li>
-              <li className="nav-item">
-                <a className="nav-link text-danger" href="#">
+                <Link className="nav-link text-danger" to={"/aboutUs"}>
                   Sobre nosotros
-                </a>
+                </Link>
               </li>
               <li className="nav-item dropdown">
                 <a
@@ -82,9 +80,9 @@ export function NavBar() {
                 </ul>
               </li>
               <li className="nav-item">
-                <a className="nav-link active" aria-current="page" href="#">
+                <Link className="nav-link active " to={"/ContactMe"}>
                   Contactanos
-                </a>
+                </Link>
               </li>
             </ul>
             <form className="d-flex" role="search">
@@ -110,31 +108,54 @@ export function NavBar() {
                   />
                 </a>
                 <li className="nav-item">
-                  <a
-                    className="nav-link active"
-                    aria-current="page"
-                    width="30"
-                    height="30"
-                    href="#"
-                  >
+                  <Link className="nav-link active" to={"/ShoppingCard"}>
                     carrito
-                  </a>
+                  </Link>
                 </li>
               </div>
-              <div className="MyAccount">
+              <div className="MyAccount justify-content-center">
                 <a href="#">
                   <img
                     width="30"
                     height="30"
+                    className="justify-content-center"
                     src="https://cdn.icon-icons.com/icons2/1863/PNG/512/account-circle_119476.png"
                     alt=""
                   />
                 </a>
-                <li className="nav-item">
-                  <a className="nav-link active" aria-current="page" href="#">
-                    Mi cuenta
-                  </a>
-                </li>
+                <ul className="navbar-nav">
+                  <li className="nav-item dropdown">
+                    <a
+                      className="nav-link dropdown-toggle"
+                      href="#"
+                      role="button"
+                      data-bs-toggle="dropdown"
+                      aria-expanded="false"
+                    >
+                      Mi cuenta
+                    </a>
+                    <ul className="dropdown-menu dropdown-menu-dark">
+                      <li>
+                        <a className="dropdown-item" href="#">
+                          Perfil
+                        </a>
+                      </li>
+                      <li>
+                        <a className="dropdown-item" href="#">
+                          Editar perfil
+                        </a>
+                      </li>
+                      <li>
+                        <hr className="dropdown-divider" />
+                      </li>
+                      <li>
+                        <Link className="dropdown-item" to="/LoginPage">
+                          Cerrar sesion
+                        </Link>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
               </div>
             </ul>
           </div>
